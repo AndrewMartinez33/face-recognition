@@ -80,7 +80,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    fetch('https://git.heroku.com/rocky-beyond-40790/imageurl', {
+    fetch('https://rocky-beyond-40790.herokuapp.com/imageurl', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -90,7 +90,7 @@ class App extends Component {
       .then(res => res.json())
       .then(response => {
         if (response) {
-          fetch('https://git.heroku.com/rocky-beyond-40790/image', {
+          fetch('https://rocky-beyond-40790.herokuapp.com/image', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
